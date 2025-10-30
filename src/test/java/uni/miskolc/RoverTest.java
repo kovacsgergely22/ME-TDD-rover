@@ -86,4 +86,13 @@ public class RoverTest {
         assertEquals(6, rover.getY());
     }
 
+    @Test
+    void testRoverTurnsLeftMovesForward() {
+        Rover rover = new Rover(4, 4, Direction.NORTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("lf"); //
+        assertEquals(3, rover.getX());
+        assertEquals(4, rover.getY());
+        assertEquals(Direction.WEST, rover.getDirection());
+    }
+
 }

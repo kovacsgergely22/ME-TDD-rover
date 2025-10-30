@@ -63,6 +63,22 @@ public class Rover {
                         break;
                 }
             }
+            if (command == 'l') {
+                switch (this.direction) {
+                    case NORTH:
+                        this.direction = Direction.WEST;
+                        break;
+                    case EAST:
+                        this.direction = Direction.NORTH;
+                        break;
+                    case SOUTH:
+                        this.direction = Direction.EAST;
+                        break;
+                    case WEST:
+                        this.direction = Direction.SOUTH;
+                        break;
+                }
+            }
         }
     }
 }

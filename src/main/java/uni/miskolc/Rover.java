@@ -94,5 +94,19 @@ public class Rover {
     }
 
     private void moveBackward() {
+        switch (this.direction) {
+            case NORTH -> {
+                setY(getY() - 1);
+            }
+            case EAST -> {
+                setX(getX() - 1);
+            }
+            case SOUTH -> {
+                setY(getY() + 1);
+            }
+            case WEST -> {
+                setX(getX() + 1);
+            }
+        }
     }
 }

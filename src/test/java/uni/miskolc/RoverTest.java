@@ -1,18 +1,18 @@
 package uni.miskolc;
 
-import javax.swing.text.Position;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RoverTest {
 
-    void roverInitializesWithCorrectPositionAndDirection(){
+    @Test
+    void testRoverInitialState() {
+        // Most már 'Direction' enumot használunk a 'char' helyett
+        Rover rover = new Rover(0, 0, Direction.NORTH);
 
-        Position startingPosition = new Position(0, 0);
-        Direction startingDirection = Direction.N;
-
-        Rover rover = new Rover(startingPosition, startingDirection);
-
-        assertEquals(startingPosition, rover.getPosition());
-        assertEquals(startingDirection, rover.getDirection());
+        assertEquals(0, rover.getX());
+        assertEquals(0, rover.getY());
+        // Az ellenőrzés is az enumra történik
+        assertEquals(Direction.NORTH, rover.getDirection());
     }
 }

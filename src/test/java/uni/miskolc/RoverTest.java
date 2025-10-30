@@ -7,51 +7,34 @@ public class RoverTest {
 
     @Test
     void testRoverInitialState() {
-        // Most már 'Direction' enumot használunk a 'char' helyett
+
         Rover rover = new Rover(0, 0, Direction.NORTH);
 
         assertEquals(0, rover.getX());
         assertEquals(0, rover.getY());
-        // Az ellenőrzés is az enumra történik
+
         assertEquals(Direction.NORTH, rover.getDirection());
     }
 
     @Test
-    void testRoverTurnsRightFromNorth() {
+    void testRoverTurnsRight() {
+        // Létrehozunk egy rovert, ami északra néz
         Rover rover = new Rover(0, 0, Direction.NORTH);
-        rover.receiveCommand('r');
-        assertEquals(0, rover.getX());
-        assertEquals(0, rover.getY());
-        assertEquals(Direction.NORTH, rover.getDirection());
-    }
 
-    /**
-     * Teszt: Keletről (E) jobbra fordulva Délre (S) kell nézzen.
-     */
-    @Test
-    void testRoverTurnsRightFromEast() {
-        Rover rover = new Rover(0, 0, Direction.EAST);
-        rover.receiveCommand('r');
-        assertEquals(Direction.SOUTH, rover.getDirection());
-    }
+        // Kiadjuk a parancsot
+        rover.receiveCommand("r"); // 'r' a 'right' (jobbra)
 
-    /**
-     * Teszt: Délről (S) jobbra fordulva Nyugatra (W) kell nézzen.
-     */
-    @Test
-    void testRoverTurnsRightFromSouth() {
-        Rover rover = new Rover(0, 0, Direction.SOUTH);
-        rover.receiveCommand('r');
-        assertEquals(Direction.WEST, rover.getDirection());
-    }
+        // Elvárás: A rover most 'E' (East) felé néz
+        assertEquals('E', rover.getDirection());
 
-    /**
-     * Teszt: Nyugatról (W) jobbra fordulva Északra (N) kell nézzen.
-     */
-    @Test
-    void testRoverTurnsRightFromWest() {
-        Rover rover = new Rover(0, 0, Direction.WEST);
-        rover.receiveCommand('r');
-        assertEquals(Direction.NORTH, rover.getDirection());
+        // Teszteljük körbe
+        rover.receiveCommand("r");
+        assertEquals('S', rover.getDirection()); // Dél
+
+        rover.receiveCommand("r");
+        assertEquals('W', rover.getDirection()); // Nyugat
+
+        rover.receiveCommand("r");
+        assertEquals('N', rover.getDirection()); // Vissza Északra
     }
 }

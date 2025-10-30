@@ -46,5 +46,6 @@ public class Rover {
     }
 
     public void receiveCommand(char r) {
+
     }
 }

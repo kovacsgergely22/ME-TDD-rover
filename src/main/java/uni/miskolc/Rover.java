@@ -16,7 +16,6 @@ public class Rover {
         this.planet = planet;
     }
 
-    // A getterek a primitív mezőket adják vissza
     public int getX() {
         return this.x;
     }
@@ -46,8 +45,6 @@ public class Rover {
                 }
             }
         }
-
-        // A jelentés is a belső x, y mezőkből dolgozik
         return commands;
     }
 

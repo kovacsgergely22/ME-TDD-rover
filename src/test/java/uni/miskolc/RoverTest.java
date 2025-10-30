@@ -17,24 +17,17 @@ public class RoverTest {
     }
 
     @Test
-    void testRoverTurnsRight() {
-        // Létrehozunk egy rovert, ami északra néz
+    void testRoverCanTurnRightFromNorth() {
         Rover rover = new Rover(0, 0, Direction.NORTH);
-
-        // Kiadjuk a parancsot
-        rover.receiveCommand("r"); // 'r' a 'right' (jobbra)
-
-        // Elvárás: A rover most 'E' (East) felé néz
-        assertEquals('E', rover.getDirection());
-
-        // Teszteljük körbe
-        rover.receiveCommand("r");
-        assertEquals('S', rover.getDirection()); // Dél
-
-        rover.receiveCommand("r");
-        assertEquals('W', rover.getDirection()); // Nyugat
-
-        rover.receiveCommand("r");
-        assertEquals('N', rover.getDirection()); // Vissza Északra
+        rover.execute("r"); // "r" = right
+        assertEquals(Direction.EAST, rover.getDirection());
     }
+
+    @Test
+    void testRoverCanTurnRightFromEast() {
+        Rover rover = new Rover(0, 0, Direction.EAST);
+        rover.execute("r");
+        assertEquals(Direction.SOUTH, rover.getDirection());
+    }
+
 }

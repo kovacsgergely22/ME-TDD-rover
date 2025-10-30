@@ -44,4 +44,11 @@ public class RoverTest {
         assertEquals(Direction.SOUTH, rover.getDirection());
     }
 
+    @Test
+    void testRoverHandlesMultipleTurnCommands() {
+        Rover rover = new Rover(0, 0, Direction.NORTH);
+        rover.execute("rrl"); // N -> E -> S -> E
+        assertEquals(Direction.EAST, rover.getDirection());
+    }
+
 }

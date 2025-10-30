@@ -104,4 +104,13 @@ public class RoverTest {
         assertEquals(0, rover.getY()); // Visszateker y=0-ra
     }
 
+    @Test
+    void testRoverWrapsAroundSouthEdge() {
+        // A bolygó alján van (y=0) és Délre megy
+        Rover rover = new Rover(0, 0, Direction.SOUTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("f");
+        assertEquals(0, rover.getX());
+        assertEquals(9, rover.getY()); // Visszateker y=9-re (10-1)
+    }
+
 }

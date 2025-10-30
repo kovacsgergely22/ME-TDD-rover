@@ -48,36 +48,10 @@ public class Rover {
     public void execute(String commands) {
         for (char command : commands.toCharArray()) {
             if (command == 'r') {
-                switch (this.direction) {
-                    case NORTH:
-                        this.direction = Direction.EAST;
-                        break;
-                    case EAST:
-                        this.direction = Direction.SOUTH;
-                        break;
-                    case SOUTH:
-                        this.direction = Direction.WEST;
-                        break;
-                    case WEST:
-                        this.direction = Direction.NORTH;
-                        break;
-                }
+                this.direction = this.direction.turnRight();
             }
             if (command == 'l') {
-                switch (this.direction) {
-                    case NORTH:
-                        this.direction = Direction.WEST;
-                        break;
-                    case EAST:
-                        this.direction = Direction.NORTH;
-                        break;
-                    case SOUTH:
-                        this.direction = Direction.EAST;
-                        break;
-                    case WEST:
-                        this.direction = Direction.SOUTH;
-                        break;
-                }
+                this.direction = this.direction.turnLeft();
             }
         }
     }

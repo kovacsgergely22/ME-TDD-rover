@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RoverTest {
 
-    //private final int PLANET_WIDTH = 10;
-    //private final int PLANET_HEIGHT = 10;
     private Planet defaultPlanet;
 
     @BeforeEach

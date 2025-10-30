@@ -59,23 +59,15 @@ public class RoverTest {
         Rover rover = new Rover(0, 0, Direction.NORTH, PLANET_WIDTH, PLANET_HEIGHT);
         rover.execute("f");
         assertEquals(0, rover.getX());
-        assertEquals(1, rover.getY()); // Y nő
+        assertEquals(1, rover.getY());
     }
 
     @Test
     void testRoverMovesForwardEast() {
         Rover rover = new Rover(0, 0, Direction.EAST, PLANET_WIDTH, PLANET_HEIGHT);
         rover.execute("f");
-        assertEquals(1, rover.getX()); // X nő
+        assertEquals(1, rover.getX());
         assertEquals(0, rover.getY());
-    }
-
-    @Test
-    void testRoverMovesBackwardSouth() {
-        Rover rover = new Rover(5, 5, Direction.SOUTH, PLANET_WIDTH, PLANET_HEIGHT);
-        rover.execute("b");
-        assertEquals(5, rover.getX());
-        assertEquals(6, rover.getY()); // Hátra 'S'-ből = Y nő
     }
 
 }

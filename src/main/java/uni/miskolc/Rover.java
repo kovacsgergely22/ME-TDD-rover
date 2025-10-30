@@ -61,9 +61,38 @@ public class Rover {
             if (command == 'r') {
                 this.direction = this.direction.turnRight();
             }
-            if (command == 'l') {
+            else if (command == 'l') {
                 this.direction = this.direction.turnLeft();
             }
+            else if (command == 'f') {
+                moveForward();
+            }
+            else if (command == 'b') {
+                moveBackward();
+            }
         }
+    }
+
+    private void moveForward() {
+        switch (this.direction) {
+            case NORTH -> {
+                setY(getY() + 1);
+            }
+            case EAST -> {
+                setX(getX() + 1);
+            }
+            case SOUTH -> {
+                setY(getY() - 1);
+            }
+            case WEST -> {
+                setX(getX() - 1);
+            }
+            default -> {
+                throw new IllegalStateException("Unexpected value: " + this.direction);
+            }
+        }
+    }
+
+    private void moveBackward() {
     }
 }

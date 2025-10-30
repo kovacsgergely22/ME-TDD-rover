@@ -4,28 +4,22 @@ public enum Direction {
     NORTH, EAST, SOUTH, WEST;
 
     public Direction turnRight() {
-        // this: az aktuális enum érték (pl. N)
-        switch (this) {
-            case NORTH:
-                return EAST;
-            case EAST:
-                return SOUTH;
-            case SOUTH:
-                return WEST;
-            case WEST:
-                return NORTH;
-            default:
-                throw new IllegalStateException();
-        }
+        return switch (this) {
+            case NORTH -> EAST;
+            case EAST -> SOUTH;
+            case SOUTH -> WEST;
+            case WEST -> NORTH;
+            default -> throw new IllegalStateException();
+        };
     }
 
     public Direction turnLeft() {
-        switch (this) {
-            case NORTH: return WEST;
-            case WEST: return SOUTH;
-            case SOUTH: return EAST;
-            case EAST: return NORTH;
-            default: throw new IllegalStateException();
-        }
+        return switch (this) {
+            case NORTH -> WEST;
+            case WEST -> SOUTH;
+            case SOUTH -> EAST;
+            case EAST -> NORTH;
+            default -> throw new IllegalStateException();
+        };
     }
 }

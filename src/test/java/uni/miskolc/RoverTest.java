@@ -169,4 +169,18 @@ public class RoverTest {
         assertEquals(Direction.NORTH, rover.getDirection());
     }
 
+    @Test
+    void testRoverStopsAtObstacleWhenWrapping() {
+        // Point obstacle = new Point(0, 0); helyett:
+        int[] obstacle = new int[]{0, 0};
+        Planet planetWithObstacle = new Planet(10, 10, List.of(obstacle));
+
+        Rover rover = new Rover(0, 9, Direction.NORTH, planetWithObstacle);
+        String status = rover.execute("f");
+
+        assertEquals("OBSTACLE:0,0", status);
+        assertEquals(0, rover.getX());
+        assertEquals(9, rover.getY());
+    }
+
 }

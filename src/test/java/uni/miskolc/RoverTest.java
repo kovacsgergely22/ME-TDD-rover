@@ -113,4 +113,13 @@ public class RoverTest {
         assertEquals(9, rover.getY()); // Visszateker y=9-re (10-1)
     }
 
+    @Test
+    void testRoverWrapsAroundEastEdge() {
+        // A bolygó jobb szélén van (x=9) és Keletre megy
+        Rover rover = new Rover(9, 0, Direction.EAST, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("f");
+        assertEquals(0, rover.getX()); // Visszateker x=0-ra
+        assertEquals(0, rover.getY());
+    }
+
 }

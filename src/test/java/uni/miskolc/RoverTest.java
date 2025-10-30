@@ -70,4 +70,20 @@ public class RoverTest {
         assertEquals(0, rover.getY());
     }
 
+    @Test
+    void testRoverMovesBackwardNorth() {
+        Rover rover = new Rover(5, 5, Direction.NORTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("b");
+        assertEquals(5, rover.getX());
+        assertEquals(4, rover.getY());
+    }
+
+    @Test
+    void testRoverMovesBackwardSouth() {
+        Rover rover = new Rover(5, 5, Direction.SOUTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("b");
+        assertEquals(5, rover.getX());
+        assertEquals(6, rover.getY());
+    }
+
 }

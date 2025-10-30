@@ -95,4 +95,13 @@ public class RoverTest {
         assertEquals(Direction.WEST, rover.getDirection());
     }
 
+    @Test
+    void testRoverWrapsAroundNorthEdge() {
+        // A bolygó tetején van (y=9) és Északra megy
+        Rover rover = new Rover(0, 9, Direction.NORTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("f");
+        assertEquals(0, rover.getX());
+        assertEquals(0, rover.getY()); // Visszateker y=0-ra
+    }
+
 }

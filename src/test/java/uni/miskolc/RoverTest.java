@@ -154,4 +154,19 @@ public class RoverTest {
         assertEquals(1, rover.getY());
     }
 
+    @Test
+    void testRoverStopsAtObstacleDuringSequence() {
+        // Point obstacle = new Point(0, 2); helyett:
+        int[] obstacle = new int[]{0, 2};
+        Planet planetWithObstacle = new Planet(10, 10, List.of(obstacle));
+
+        Rover rover = new Rover(0, 0, Direction.NORTH, planetWithObstacle);
+        String status = rover.execute("ffr");
+
+        assertEquals("OBSTACLE:0,2", status);
+        assertEquals(0, rover.getX());
+        assertEquals(1, rover.getY());
+        assertEquals(Direction.NORTH, rover.getDirection());
+    }
+
 }

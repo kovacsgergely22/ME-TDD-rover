@@ -27,7 +27,7 @@ public class Rover {
         return this.direction;
     }
 
-    public void execute(String commands) {
+    public String execute(String commands) {
         for (char command : commands.toCharArray()) {
 
             if (command == 'r') {
@@ -37,17 +37,18 @@ public class Rover {
             } else if (command == 'f') {
                 String status = move(true); // true = forward
                 if (!status.equals("OK")) {
-                    return;
+                    return status;
                 }
             } else if (command == 'b') {
                 String status = move(false); // false = backward
                 if (!status.equals("OK")) {
-                    return;
+                    return status;
                 }
             }
         }
 
         // A jelentés is a belső x, y mezőkből dolgozik
+        return commands;
     }
 
     private String move(boolean isForward) {

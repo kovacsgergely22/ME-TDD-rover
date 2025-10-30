@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RoverTest {
 
+    private final int PLANET_WIDTH = 10;
+    private final int PLANET_HEIGHT = 10;
+
     @Test
     void testRoverInitialState() {
 
@@ -49,6 +52,22 @@ public class RoverTest {
         Rover rover = new Rover(0, 0, Direction.NORTH);
         rover.execute("rrl"); // N -> E -> S -> E
         assertEquals(Direction.EAST, rover.getDirection());
+    }
+
+    @Test
+    void testRoverMovesForwardNorth() {
+        Rover rover = new Rover(0, 0, Direction.NORTH, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("f");
+        assertEquals(0, rover.getX());
+        assertEquals(1, rover.getY()); // Y nő
+    }
+
+    @Test
+    void testRoverMovesForwardEast() {
+        Rover rover = new Rover(0, 0, Direction.EAST, PLANET_WIDTH, PLANET_HEIGHT);
+        rover.execute("f");
+        assertEquals(1, rover.getX()); // X nő
+        assertEquals(0, rover.getY());
     }
 
 }

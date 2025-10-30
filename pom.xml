@@ -8,10 +8,8 @@
   <packaging>jar</packaging>
 
   <name>MarsRover</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>23</maven.compiler.source>
     <maven.compiler.target>23</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,10 +19,9 @@
   <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-engine</artifactId>
-    <version>5.10.2</version> <!-- Használj egy friss verziót -->
+    <version>5.10.2</version>
     <scope>test</scope>
   </dependency>
-  <!-- Ez magukhoz a tesztek írásához kell (pl. @Test annotáció) -->
   <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>

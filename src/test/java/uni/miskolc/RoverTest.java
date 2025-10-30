@@ -183,4 +183,18 @@ public class RoverTest {
         assertEquals(9, rover.getY());
     }
 
+    @Test
+    void testRoverStopsAtObstacleWithoutWrap() {
+        int[] obstacle = new int[]{9, 8};
+
+        Planet planetWithObstacle = new Planet(10, 10, List.of(obstacle));
+
+        Rover rover = new Rover(9, 7, Direction.NORTH, planetWithObstacle);
+        String status = rover.execute("f");
+
+        assertEquals("OBSTACLE:9,8", status);
+        assertEquals(9, rover.getX());
+        assertEquals(7, rover.getY());
+    }
+
 }

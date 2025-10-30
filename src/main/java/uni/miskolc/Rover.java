@@ -74,6 +74,7 @@ public class Rover {
         // 4. ELLENŐRZÉS: int x, int y átadásával
         if (this.planet.hasObstacleAt(wrappedX, wrappedY)) {
             // Akadály van! Nem mozgunk, és jelentjük.
+            System.out.println("Obstacle at " + wrappedX + ", " + wrappedY);
             return String.format("OBSTACLE:%d,%d", wrappedX, wrappedY);
         } else {
             // Nincs akadály. Végrehajtjuk a mozgást.

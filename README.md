@@ -42,9 +42,9 @@ A projekt klónozása és a tesztek futtatása:
 git clone [https://github.com/kovacsgergely22/ME-TDD-rover.git](https://github.com/kovacsgergely22/ME-TDD-rover.git)
 ```
 
-# IntelliJ IDEA-ban készült a projekt, a klónozás ezen belül a legcélszerűbb
+### IntelliJ IDEA-ban készült a projekt, a klónozás ezen belül a legcélszerűbb
 
-# A projekt felépítéséhez Maven szükséges.
+### A projekt felépítéséhez Maven szükséges.
 
-# Tesztek futtatása
+### Tesztek futtatása
 A RoverTest.java futtasásával (MarsRover/src/test/java/uni/miskolc/RoverTest.java)
